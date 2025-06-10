@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upahar.np - A Gift from the Heart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Welcome Popup -->
+  <div class="popup" id="welcomePopup">
+    <div class="popup-content">
+      <p>Choose Upahar to gift your loved ones and yourself — a token of love from the heart ❤️</p>
+      <button class="popup-btn" onclick="closePopup()">Continue</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="top-bar" id="topBar">
+      📞 +977-9826980213 | ✉️ upahar@gmail.com | 🟢 WhatsApp Available
+    </div>
+    <div class="nav-container">
+      <a href="#" class="logo">Upahar.np</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span id="menuIcon">☰</span>
+      </button>
+      <div class="mobile-menu" id="mobileMenu">
+        <ul class="nav-links">
+          <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+          <li><a href="#products" onclick="closeMobileMenu()">Products</a></li>
+          <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+          <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Spread Joy</h1>
+        <p>Crafting memories into heartfelt gifts with Upahar - A Gift from the Heart</p>
+        <a href="#products" class="hero-btn">Shop Now</a>
+      </div>
+      <div class="hero-images">
+        <div class="hero-image">📸</div>
+        <div class="hero-image">🎨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <div class="section-container">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&h=300&fit=crop" alt="Vintage Polaroids">
+            <div class="product-badge">📸 Memories</div>
+          </div>
+          <div class="product-content">
+            <h3>Polaroids</h3>
+            <p>Vintage-style polaroids presented in a nostalgic keepsake box with a handwritten note.</p>
+            <div class="product-price">Rs. 50 per piece</div>
+            <a class="whatsapp-btn" href="https://wa.me/9779826980213?text=I%20want%20to%20order%20Polaroids%20from%20Upahar.np" target="_blank">🟢 Order via WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop" alt="Custom Portrait Sketch">
+            <div class="product-badge">🎨 Artwork</div>
+          </div>
+          <div class="product-content">
+            <h3>Custom Sketch</h3>
+            <p>Detailed hand-drawn sketch on textured paper, framed and accompanied by a heartfelt note.</p>
+            <div class="product-price">Rs. 1500 (framed with note)</div>
+            <a class="whatsapp-btn" href="https://wa.me/9779826980213?text=I%20want%20to%20order%20Custom%20Sketch%20from%20Upahar.np" target="_blank">🟢 Order via WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1520637736862-4d197d17c89a?w=500&h=300&fit=crop" alt="Fresh Flower Bouquet">
+            <div class="product-badge">💐 Fresh</div>
+          </div>
+          <div class="product-content">
+            <h3>Bouquets</h3>
+            <p>Fresh and fragrant flowers arranged in an elegant floral box. Perfect for every emotion.</p>
+            <div class="product-price">Price varies — contact us</div>
+            <a class="whatsapp-btn" href="https://wa.me/9779826980213?text=I%20want%20to%20order%20Bouquets%20from%20Upahar.np" target="_blank">🟢 Order via WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&h=300&fit=crop" alt="Curated Gift Box">
+            <div class="product-badge">🎁 Combo</div>
+          </div>
+          <div class="product-content">
+            <h3>Gift Combos</h3>
+            <p>A curated gift box of love — polaroids, sketches, and blooms bundled for heartfelt impact.</p>
+            <div class="product-price">Custom pricing</div>
+            <a class="whatsapp-btn" href="https://wa.me/9779826980213?text=I%20want%20to%20order%20Gift%20Combos%20from%20Upahar.np" target="_blank">🟢 Order via WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=500&h=300&fit=crop" alt="Cute Teddy Bear">
+            <div class="product-badge">🧸 Cuddles</div>
+          </div>
+          <div class="product-content">
+            <h3>Teddy Bear</h3>
+            <p>A cute teddy for the ones you love ❤️</p>
+            <div class="product-price">Rs. 1500 (with note)</div>
+            <a class="whatsapp-btn" href="https://wa.me/9779826980213?text=I%20want%20to%20order%20Teddy%20Bear%20from%20Upahar.np" target="_blank">🟢 Order via WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=500&h=300&fit=crop" alt="Ferrero Rocher Chocolates">
+            <div class="product-badge">🍫 Sweet</div>
+          </div>
+          <div class="product-content">
+            <h3>Ferrero Rocher</h3>
+            <p>Send the sweetness of love through sweet chocolates</p>
+            <div class="product-price">Rs. 1500 (framed with note)</div>
+            <a class="whatsapp-btn" href="https://wa.me/9779826980213?text=I%20want%20to%20order%20Ferrero%20Rocher%20from%20Upahar.np" target="_blank">🟢 Order via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <h2>About Us</h2>
+      <p>Upahar.np is your heartfelt destination for personalized gifts in Nepal. We specialize in creating memorable experiences through custom polaroids, hand-drawn sketches, fresh bouquets, and curated gift combinations. Our mission is to help you express love and create lasting memories.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>Contact Us</h3>
+        <p><strong>Call/WhatsApp:</strong><br><a href="tel:+9779826980213">+977-9826980213</a></p>
+        <p><strong>Email:</strong><br><a href="mailto:upahar@gmail.com">upahar@gmail.com</a></p>
+      </div>
+      <div class="contact-form">
+        <h4>Send us a message</h4>
+        <form onsubmit="sendWhatsApp(event)">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Name*" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your email*" required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="4" placeholder="Message*" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">🟢 Send via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Upahar.np | Made with love in Nepal ❤️
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
