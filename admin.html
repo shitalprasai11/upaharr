@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upahar Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    h1 { color: #c44569; }
+    form, .product {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #00b894;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product-list {
+      margin-top: 2rem;
+    }
+    .product h3 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛠 Upahar Admin Panel</h1>
+  <form id="productForm">
+    <input type="text" id="name" placeholder="Product Name" required>
+    <input type="text" id="price" placeholder="Price" required>
+    <input type="text" id="badge" placeholder="Badge (e.g., 🎁 Combo)">
+    <input type="text" id="imageUrl" placeholder="Image URL" required>
+    <textarea id="description" placeholder="Product Description" required></textarea>
+    <button type="submit">Add Product</button>
+  </form>
+
+  <div class="product-list" id="productList">
+    <h2>📦 Product List</h2>
+    <!-- Products will appear here -->
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    // Firebase SDK imports
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    // Your config (from screenshot)
+    const firebaseConfig = {
+      apiKey: "AIzaSyCY7swk3qDZch-C3R4be1F5wsVIinIwFdk",
+      authDomain: "upaharr-44cc4.firebaseapp.com",
+      projectId: "upaharr-44cc4",
+      storageBucket: "upaharr-44cc4.appspot.com",
+      messagingSenderId: "516380696965",
+      appId: "1:516380696965:web:db93b2c4ef726fe714b17c",
+      measurementId: "G-M4W6W60NRM"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const productsRef = collection(db, "products");
+
+    // Add product to Firestore
+    document.getElementById("productForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const product = {
+        name: document.getElementById("name").value,
+        price: document.getElementById("price").value,
+        badge: document.getElementById("badge").value,
+        imageUrl: document.getElementById("imageUrl").value,
+        description: document.getElementById("description").value
+      };
+      try {
+        await addDoc(productsRef, product);
+        alert("✅ Product added!");
+        loadProducts(); // refresh list
+      } catch (error) {
+        console.error("❌ Error adding product:", error);
+      }
+      e.target.reset();
+    });
+
+    // Load product list
+    async function loadProducts() {
+      const list = document.getElementById("productList");
+      const snapshot = await getDocs(productsRef);
+      let html = "";
+      snapshot.forEach(doc => {
+        const p = doc.data();
+        html += `
+          <div class="product">
+            <h3>${p.badge || ""} ${p.name}</h3>
+            <p><strong>Price:</strong> ${p.price}</p>
+            <p>${p.description}</p>
+            <img src="${p.imageUrl}" alt="${p.name}" width="200"/>
+          </div>
+        `;
+      });
+      list.innerHTML = `<h2>📦 Product List</h2>` + html;
+    }
+
+    // Load on page load
+    loadProducts();
+  </script>
+</body>
+</html>
